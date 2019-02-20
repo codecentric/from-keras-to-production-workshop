@@ -4,6 +4,9 @@
 
 https://www.kaggle.com/moltean/fruits
 
+## Notebooks
+https://github.com/codecentric/from-keras-to-production-workshop.git
+
 ## Images pullen
 - docker pull codecentric/from-keras-to-production-baseimage
 - docker pull codecentric/tensorflow-serving-baseimage
