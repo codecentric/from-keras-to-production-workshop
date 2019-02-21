@@ -37,6 +37,10 @@ jupyter nbconvert end2end_ds.ipynb --to slides --post serve --reveal-prefix=reve
 
 ## References and further information
 
+## IPython and Jupyterlab
+
+https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html
+
 ### Reinforcement Learning
 
 https://www.youtube.com/watch?v=FCyZplb0ul4
