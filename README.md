@@ -5,6 +5,7 @@
 https://www.kaggle.com/moltean/fruits
 
 ## Notebooks
+
 https://github.com/codecentric/from-keras-to-production-workshop.git
 
 ## Images pullen
@@ -33,3 +34,9 @@ pip install -r requirements.txt
 cd slides
 jupyter nbconvert end2end_ds.ipynb --to slides --post serve --reveal-prefix=reveal.js
 ```
+
+## References and further information
+
+### Reinforcement Learning
+
+https://www.youtube.com/watch?v=FCyZplb0ul4
