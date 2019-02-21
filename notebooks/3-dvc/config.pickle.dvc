@@ -1,0 +1,10 @@
+cmd: python DVC_task.py configure output-task/config.pickle
+deps:
+- md5: ce5a7f0882cd5a2d484fc144b879750a
+  path: DVC_task.py
+md5: 12e76e89c01bb8e0e4afddd16e51b829
+outs:
+- cache: false
+  md5: bc6a3039863d8269babda86cb91efa62
+  metric: false
+  path: output-task/config.pickle

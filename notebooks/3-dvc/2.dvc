@@ -1,0 +1,12 @@
+cmd: python DVC_task.py export output-task/model.h5 ../6-models/fruits/2
+deps:
+- md5: ce5a7f0882cd5a2d484fc144b879750a
+  path: DVC_task.py
+- md5: 138c1cbdf328b96bd137fe64973e48dd
+  path: output-task/model.h5
+md5: 28335e85d45cd097defc2c94f24ddc81
+outs:
+- cache: false
+  md5: 05a4e20da8ff033db9f08a67aa442447.dir
+  metric: false
+  path: ../6-models/fruits/2

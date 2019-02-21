@@ -1,0 +1,14 @@
+cmd: python DVC_task.py train_model ../../fruits output-task/config.pickle output-task/model.h5
+deps:
+- md5: ce5a7f0882cd5a2d484fc144b879750a
+  path: DVC_task.py
+- md5: bc6a3039863d8269babda86cb91efa62
+  path: output-task/config.pickle
+- md5: fafd4549c000910b6c2921bc7e3c1839.dir
+  path: ../../fruits
+md5: b1945b963a8e71c20fe157ae51620c38
+outs:
+- cache: false
+  md5: 138c1cbdf328b96bd137fe64973e48dd
+  metric: false
+  path: output-task/model.h5
