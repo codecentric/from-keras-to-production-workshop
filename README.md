@@ -20,7 +20,8 @@ docker run -p 8888:8888 --mount type=bind,source=$(pwd)/notebooks,target=/keras2
 
 ## Jenkins starten
 ```bash
-docker run -p 8080:8080 -p 50000:50000 codecentric/jenkins-python-image
+docker cp <jupyter-container>:keras2production/fruits fruits
+docker run -p 8080:8080 -p 50000:50000 --mount type=bind,source=$(pwd)/fruits,target=/fruits --name jenkins_solution codecentric/jenkins-python-image
 ```
 
 ## TensorFlow Serving starten
