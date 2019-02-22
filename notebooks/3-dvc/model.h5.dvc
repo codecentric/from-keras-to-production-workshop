@@ -1,4 +1,4 @@
-cmd: python DVC_task.py train_model ../../fruits output-task/config.pickle output-task/model.h5
+cmd: python3 DVC_task.py train_model ../../fruits output-task/config.pickle output-task/model.h5
 deps:
 - md5: ce5a7f0882cd5a2d484fc144b879750a
   path: DVC_task.py
@@ -6,9 +6,9 @@ deps:
   path: output-task/config.pickle
 - md5: fafd4549c000910b6c2921bc7e3c1839.dir
   path: ../../fruits
-md5: b1945b963a8e71c20fe157ae51620c38
+md5: 45e61ff40a3e0defd74ba7ea8d7de08e
 outs:
 - cache: false
-  md5: 138c1cbdf328b96bd137fe64973e48dd
+  md5: d2c78333a5c10e250ca32c31acda6e54
   metric: false
   path: output-task/model.h5
