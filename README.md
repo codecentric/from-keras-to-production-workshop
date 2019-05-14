@@ -16,7 +16,12 @@ https://github.com/codecentric/from-keras-to-production-workshop.git
 ## Jupyterlab starten
 ```bash
 docker run -p 8888:8888 --mount type=bind,source=$(pwd)/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
+
+# Für Windows
+docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
 ```
+
+
 
 ## Jenkins starten
 ```bash

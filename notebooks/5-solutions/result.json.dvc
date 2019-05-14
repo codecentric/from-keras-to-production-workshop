@@ -1,0 +1,12 @@
+cmd: python DVC_exercise.py classify output-exercise/test-processed.jpg output-exercise/result.json
+deps:
+- md5: 768a62e49f6093b69a4d47cac6e387fe
+  path: DVC_exercise.py
+- md5: 9be73f582255331b84c3de936f6cc8f8
+  path: output-exercise/processed.jpg
+md5: b4def4d6dbc0150c820fe23544b869a1
+outs:
+- cache: true
+  md5: c7d4ca78a77357d89789d675ea96d969
+  metric: false
+  path: output-exercise/result.json
