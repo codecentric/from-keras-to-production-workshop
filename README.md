@@ -58,3 +58,7 @@ https://www.youtube.com/watch?v=FCyZplb0ul4
 ### Free Notebooks from Deep Learning with Python Book
 
 https://github.com/fchollet/deep-learning-with-python-notebooks
+
+### Visualization of activation maps
+
+https://jacobgil.github.io/deeplearning/class-activation-maps
