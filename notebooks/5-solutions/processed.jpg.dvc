@@ -1,0 +1,13 @@
+cmd: python DVC_exercise.py preprocess exercise-dataset-dvc/image.jpg output-exercise/processed.jpg
+  50 50
+deps:
+- md5: 9f022ed39e05129844fb91746ac83c6b
+  path: DVC_exercise.py
+- md5: 550db5cdeb0d249d4ad551a315ea6073
+  path: exercise-dataset-dvc/image.jpg
+md5: 180dcd75d609706fb4677dc542daf55a
+outs:
+- cache: true
+  md5: 136349d62480f6612ea3d54d783acad3
+  metric: false
+  path: output-exercise/processed.jpg
