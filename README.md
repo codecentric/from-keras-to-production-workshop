@@ -43,6 +43,10 @@ jupyter nbconvert end2end_ds.ipynb --to slides --post serve --reveal-prefix=reve
 
 ## References and further information
 
+### Kaggle dataset
+
+https://www.kaggle.com/moltean/fruits/kernels
+
 ### IPython and Jupyterlab
 
 https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html
