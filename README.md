@@ -11,22 +11,14 @@ https://github.com/codecentric/from-keras-to-production-workshop.git
 ## Images pullen
 - docker pull codecentric/from-keras-to-production-baseimage
 - docker pull codecentric/tensorflow-serving-baseimage
-- docker pull codecentric/jenkins-python-image
 
 ## Jupyterlab starten
 ```bash
+# Für Linux
 docker run -p 8888:8888 --mount type=bind,source=$(pwd)/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
 
 # Für Windows
 docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
-```
-
-
-
-## Jenkins starten
-```bash
-docker cp <jupyter-container>:keras2production/fruits fruits
-docker run -p 8080:8080 -p 50000:50000 --mount type=bind,source=$(pwd)/fruits,target=/fruits --name jenkins_solution codecentric/jenkins-python-image
 ```
 
 ## TensorFlow Serving starten
@@ -62,3 +54,8 @@ https://github.com/fchollet/deep-learning-with-python-notebooks
 ### Visualization of activation maps
 
 https://jacobgil.github.io/deeplearning/class-activation-maps
+
+
+### Combining channels in convolutional layers
+
+https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1
