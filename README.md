@@ -67,3 +67,7 @@ https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
 ### Text Preprocessing
 
 https://keras.io/preprocessing/text/
+
+### Keras examples
+
+https://github.com/keras-team/keras/tree/master/examples
