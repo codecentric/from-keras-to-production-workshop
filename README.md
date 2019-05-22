@@ -71,3 +71,7 @@ https://keras.io/preprocessing/text/
 ### Keras examples
 
 https://github.com/keras-team/keras/tree/master/examples
+
+### What’s your ML test score? A rubric for ML production systems
+
+https://ai.google/research/pubs/pub45742
