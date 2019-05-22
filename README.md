@@ -59,3 +59,15 @@ https://jacobgil.github.io/deeplearning/class-activation-maps
 ### Combining channels in convolutional layers
 
 https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1
+
+### Using pre-trained word embeddings in a Keras model
+
+https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
+
+### Text Preprocessing
+
+https://keras.io/preprocessing/text/
+
+### Keras examples
+
+https://github.com/keras-team/keras/tree/master/examples
