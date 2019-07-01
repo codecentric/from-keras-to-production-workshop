@@ -35,6 +35,10 @@ jupyter nbconvert end2end_ds.ipynb --to slides --post serve --reveal-prefix=reve
 
 ## References and further information
 
+### Image Kernels
+
+http://setosa.io/ev/image-kernels/
+
 ### Kaggle dataset
 
 https://www.kaggle.com/moltean/fruits/kernels
