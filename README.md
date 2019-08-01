@@ -9,8 +9,10 @@ https://www.kaggle.com/moltean/fruits
 https://github.com/codecentric/from-keras-to-production-workshop.git
 
 ## Images pullen
-- docker pull codecentric/from-keras-to-production-baseimage
-- docker pull codecentric/tensorflow-serving-baseimage
+```bash
+docker pull codecentric/from-keras-to-production-baseimage
+docker pull codecentric/tensorflow-serving-baseimage
+```
 
 ## Jupyterlab starten
 ```bash
