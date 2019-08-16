@@ -12,6 +12,7 @@ https://github.com/codecentric/from-keras-to-production-workshop.git
 ```bash
 docker pull codecentric/from-keras-to-production-baseimage
 docker pull codecentric/tensorflow-serving-baseimage
+docker pull puckel/docker-airflow  # TODO check
 ```
 
 ## Jupyterlab starten
@@ -26,6 +27,11 @@ docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2pr
 ## TensorFlow Serving starten
 ```bash
 docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=$(pwd)/notebooks/6-models/fruits/,target=/models/fruits -e MODEL_NAME=fruits -t tensorflow/serving:1.12.0
+```
+
+## Airflow starten
+```bash
+docker run -p 8080:8080 --mount type=bind,source=$(pwd)/notebooks/8-airflow,target=/usr/local/airflow/dags puckel/docker-airflow webserver
 ```
 
 ## Run slides
