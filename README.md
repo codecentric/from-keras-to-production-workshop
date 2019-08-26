@@ -12,10 +12,21 @@ https://github.com/codecentric/from-keras-to-production-workshop.git
 ```bash
 docker pull codecentric/from-keras-to-production-baseimage
 docker pull codecentric/tensorflow-serving-baseimage
-docker pull puckel/docker-airflow  # TODO check
+docker pull tsabsch/airflow-baseimage
 ```
 
 ## Jupyterlab starten
+### With docker-compose (recommended)
+```bash
+# Ohne Airflow
+docker-compose up
+
+# Mit Airflow
+docker-compose -f docker-compose.yml -f optional-airflow.yml up
+```
+
+### Without docker-compose
+#### Jupyterlab
 ```bash
 # Für Linux/Mac
 docker run -p 8888:8888 --mount type=bind,source=$(pwd)/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
@@ -23,25 +34,26 @@ docker run -p 8888:8888 --mount type=bind,source=$(pwd)/notebooks,target=/keras2
 # Für Windows
 docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
 ```
-
-## TensorFlow Serving starten
+#### TensorFlow Serving
 ```bash
-docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=$(pwd)/notebooks/6-models/fruits/,target=/models/fruits -e MODEL_NAME=fruits -t tensorflow/serving:1.12.0
+docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=$(pwd)/notebooks/6-models/fruits/,target=/models/fruits -e MODEL_NAME=fruits codecentric/tensorflow-serving-baseimage
 ```
 
-## Airflow starten
+#### Airflow starten
 ```bash
-docker run -p 8080:8080 --mount type=bind,source=$(pwd)/notebooks/8-airflow,target=/usr/local/airflow/dags puckel/docker-airflow webserver
+docker run -p 8080:8080 --mount type=bind,source=$(pwd)/notebooks/8-airflow/dags,target=/usr/local/airflow/dags \
+                        --mount type=bind,source=$(pwd)/notebooks/8-airflow/exercise-dataset,target=/exercise-dataset \
+                        tsabsch/airflow-baseimage
 ```
 
-## Run slides
+## Alte Folien starten
 ```bash
 pip install -r requirements.txt
 cd slides
 jupyter nbconvert end2end_ds.ipynb --to slides --post serve --reveal-prefix=reveal.js
 ```
 
-## References and further information
+## Referenzen und weitere Informationen
 
 ### Image Kernels
 

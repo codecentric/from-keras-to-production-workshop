@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  workshop:
+    image: "codecentric/from-keras-to-production-baseimage"
+    ports:
+      - 8888:8888
+    volumes:
+      - type: bind
+        source: ./notebooks
+        target: /keras2production/notebooks
+  serving:
+    image: "codecentric/tensorflow-serving-baseimage"
+    ports:
+      - 8500:8500
+      - 8501:8501
+    volumes:
+      - type: bind
+        source: ./notebooks/6-models/fruits/
+        target: /models/fruits
+    environment:
+      MODEL_NAME: fruits
