@@ -1,0 +1,4 @@
+model_pre.h5
+top_model.h5
+model_pre_architecture.json
+fruits_classifier_fine_tuned_vgg16.json
