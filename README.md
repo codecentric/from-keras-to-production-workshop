@@ -36,13 +36,13 @@ docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2pr
 ```
 #### TensorFlow Serving
 ```bash
-docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=$(pwd)/notebooks/6-models/fruits/,target=/models/fruits -e MODEL_NAME=fruits codecentric/tensorflow-serving-baseimage
+docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=$(pwd)/notebooks/12-models/fruits/,target=/models/fruits -e MODEL_NAME=fruits codecentric/tensorflow-serving-baseimage
 ```
 
 #### Airflow
 ```bash
-docker run -p 8080:8080 --mount type=bind,source=$(pwd)/notebooks/8-airflow/dags,target=/usr/local/airflow/dags \
-                        --mount type=bind,source=$(pwd)/notebooks/8-airflow/exercise-dataset,target=/exercise-dataset \
+docker run -p 8080:8080 --mount type=bind,source=$(pwd)/notebooks/04-airflow/dags,target=/usr/local/airflow/dags \
+                        --mount type=bind,source=$(pwd)/notebooks/04-airflow/exercise-dataset,target=/exercise-dataset \
                         tsabsch/airflow-baseimage
 ```
 

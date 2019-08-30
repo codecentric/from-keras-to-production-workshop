@@ -6,8 +6,8 @@ services:
       - 8080:8080
     volumes:
       - type: bind
-        source: ./notebooks/8-airflow/dags
+        source: ./notebooks/04-airflow/dags
         target: /usr/local/airflow/dags
       - type: bind
-        source: ./notebooks/8-airflow/exercise-dataset
+        source: ./notebooks/04-airflow/exercise-dataset
         target: /exercise-dataset
