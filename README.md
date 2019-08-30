@@ -1,6 +1,6 @@
 # From Keras to Production
 
-## Daten
+## Data Source
 
 https://www.kaggle.com/moltean/fruits
 
@@ -8,30 +8,30 @@ https://www.kaggle.com/moltean/fruits
 
 https://github.com/codecentric/from-keras-to-production-workshop.git
 
-## Images pullen
+## Used Docker Images
 ```bash
 docker pull codecentric/from-keras-to-production-baseimage
 docker pull codecentric/tensorflow-serving-baseimage
 docker pull tsabsch/airflow-baseimage
 ```
 
-## Jupyterlab starten
+## Start Jupyterlab
 ### With docker-compose (recommended)
 ```bash
-# Ohne Airflow
+# Without Airflow
 docker-compose up
 
-# Mit Airflow
+# With Airflow
 docker-compose -f docker-compose.yml -f optional-airflow.yml up
 ```
 
 ### Without docker-compose
 #### Jupyterlab
 ```bash
-# Für Linux/Mac
+# Linux/Mac
 docker run -p 8888:8888 --mount type=bind,source=$(pwd)/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
 
-# Für Windows
+# Docker for Windows
 docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
 ```
 #### TensorFlow Serving
@@ -39,63 +39,49 @@ docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2pr
 docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=$(pwd)/notebooks/6-models/fruits/,target=/models/fruits -e MODEL_NAME=fruits codecentric/tensorflow-serving-baseimage
 ```
 
-#### Airflow starten
+#### Airflow
 ```bash
 docker run -p 8080:8080 --mount type=bind,source=$(pwd)/notebooks/8-airflow/dags,target=/usr/local/airflow/dags \
                         --mount type=bind,source=$(pwd)/notebooks/8-airflow/exercise-dataset,target=/exercise-dataset \
                         tsabsch/airflow-baseimage
 ```
 
-## Alte Folien starten
+## Old Slides
 ```bash
 pip install -r requirements.txt
 cd slides
 jupyter nbconvert end2end_ds.ipynb --to slides --post serve --reveal-prefix=reveal.js
 ```
 
-## Referenzen und weitere Informationen
+## References and Further Information
 
-### Image Kernels
+#### General
 
-http://setosa.io/ev/image-kernels/
+- [Cheatsheet for working with IPython/Jupyter](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html)
 
-### Kaggle dataset
+- [Free notebooks from the book "Deep Learning with Python"](https://github.com/fchollet/deep-learning-with-python-notebooks)
 
-https://www.kaggle.com/moltean/fruits/kernels
+- [Introduction to Reinforcement Learning (Youtube)](https://www.youtube.com/watch?v=FCyZplb0ul4)
 
-### IPython and Jupyterlab
+- [Keras examples](https://github.com/keras-team/keras/tree/master/examples)
 
-https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html
+#### Convolutional Networks
 
-### Reinforcement Learning
+- [Visualization of image kernels](http://setosa.io/ev/image-kernels/)
 
-https://www.youtube.com/watch?v=FCyZplb0ul4
+- [Visualization of activation maps](https://jacobgil.github.io/deeplearning/class-activation-maps)
 
-### Free Notebooks from Deep Learning with Python Book
+- [Combining channels in convolutional layers](https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1)
 
-https://github.com/fchollet/deep-learning-with-python-notebooks
+#### Natural Language Processing
 
-### Visualization of activation maps
+- [Using pre-trained word embeddings in a Keras model](https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html)
 
-https://jacobgil.github.io/deeplearning/class-activation-maps
+- [Text preprocessing](https://keras.io/preprocessing/text)
 
+#### Production-Ready Data Science
 
-### Combining channels in convolutional layers
+- [What’s your ML test score? A rubric for ML production systems](https://ai.google/research/pubs/pub45742)
 
-https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1
-
-### Using pre-trained word embeddings in a Keras model
-
-https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
-
-### Text Preprocessing
-
-https://keras.io/preprocessing/text/
-
-### Keras examples
-
-https://github.com/keras-team/keras/tree/master/examples
-
-### What’s your ML test score? A rubric for ML production systems
-
-https://ai.google/research/pubs/pub45742
+- [A walkthrough of DVC](https://blog.codecentric.de/en/2019/03/walkthrough-dvc/),
+  [DVC dependency management](https://blog.codecentric.de/en/2019/08/dvc-dependency-management/)
