@@ -84,6 +84,8 @@ jupyter nbconvert end2end_ds.ipynb --to slides --post serve --reveal-prefix=reve
 
 - [Cheatsheet for working with IPython/Jupyter](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html)
 
+- [Cheatsheet for Docker](https://hackernoon.com/docker-commands-the-ultimate-cheat-sheet-994ac78e2888)
+
 - [Free notebooks from the book "Deep Learning with Python"](https://github.com/fchollet/deep-learning-with-python-notebooks)
 
 - [Introduction to Reinforcement Learning (Youtube)](https://www.youtube.com/watch?v=FCyZplb0ul4)
