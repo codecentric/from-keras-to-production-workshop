@@ -1,10 +1,10 @@
 import fire
 
 
-def preprocess(inpath, outpath, x, y):
+def preprocess(inpath, outpath):
     import cv2
     img = cv2.imread(inpath, cv2.IMREAD_COLOR)
-    larger = cv2.resize(img, (x, y))
+    larger = cv2.resize(img, (100, 100))
     gray = cv2.cvtColor(larger, cv2.COLOR_BGR2GRAY)
     cv2.imwrite(outpath, gray)
 
