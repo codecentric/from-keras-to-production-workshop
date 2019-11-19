@@ -28,13 +28,16 @@ docker-compose -f docker-compose.yml -f optional-airflow.yml up
 ### Without docker-compose
 #### Jupyterlab
 ```bash
-# Linux/Mac
+# Linux/Mac (Docker version >= 17.06)
 docker run -p 8888:8888 --mount type=bind,source=$(pwd)/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
 
-# Docker for Windows
+# Docker for Windows (Docker version >= 17.06)
 docker run -p 8888:8888 --mount type=bind,source=%cd%/notebooks,target=/keras2production/notebooks codecentric/from-keras-to-production-baseimage
 
-# Docker Toolbox (Windows 7, 8 and Windows 10 Home)
+# Docker for Windows (Docker version < 17.06)
+docker run -p 8888:8888 -v %cd%/notebooks:/keras2production/notebooks codecentric/from-keras-to-production-baseimage
+
+# Docker Toolbox (Windows 7, 8 and Windows 10 Home; a separate VM for Docker)
 docker run -d -p 8888:8888 codecentric/from-keras-to-production-baseimage
 # Copy notebooks manually into the container
 ## get container id
@@ -56,9 +59,14 @@ docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=$(pwd)/notebooks/1
 
 #### Airflow
 ```bash
-# Linux/Mac/Docker for Windows
+# Docker for Linux/Mac/Windows (Docker Version >= 17.06)
 docker run -p 8080:8080 --mount type=bind,source=$(pwd)/notebooks/04-airflow/dags,target=/usr/local/airflow/dags \
                         --mount type=bind,source=$(pwd)/notebooks/04-airflow/exercise-dataset,target=/exercise-dataset \
+                        tsabsch/airflow-baseimage
+
+# Docker for Windows (Docker version < 17.06)
+docker run -p 8080:8080 -v %cd%/notebooks/04-airflow/dags:/usr/local/airflow/dags \
+                        -v %cd%/notebooks/04-airflow/exercise-dataset:/exercise-dataset \
                         tsabsch/airflow-baseimage
 
 # Docker Toolbox (Windows 7, 8 and Windows 10 Home)
@@ -70,6 +78,10 @@ docker ps
 docker cp notebooks/04-airflow/exercise-dataset <container id>:/exercise-dataset
 docker cp notebooks/04-airflow/dags <container id>:/usr/local/airflow/dags
 ```
+
+In general: 
+- Replace current directory in commands with either `%cd%` (Windows) or `$(pwd)` Mac/Linux
+- `--mount` is supported since Docker version 17.06. If you use an older version you have to use `-v` (Volumes). See the Example in the Airflow section above.
 
 ## Old Slides
 ```bash
