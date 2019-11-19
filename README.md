@@ -79,7 +79,7 @@ docker cp notebooks/04-airflow/exercise-dataset <container id>:/exercise-dataset
 docker cp notebooks/04-airflow/dags <container id>:/usr/local/airflow/dags
 ```
 
-In general: 
+#### In general 
 - Replace current directory in commands with either `%cd%` (Windows) or `$(pwd)` Mac/Linux
 - `--mount` is supported since Docker version 17.06. If you use an older version you have to use `-v` (Volumes). See the Example in the Airflow section above.
 
