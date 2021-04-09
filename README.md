@@ -1,5 +1,8 @@
 # From Keras to Production
 
+## OUTDATED! FOR THE NEWEST VERSION SEE https://github.com/codecentric/from-jupyter-to-production-workshop (a fork of this repository)
+
+
 ## Data Source
 
 https://www.kaggle.com/moltean/fruits
